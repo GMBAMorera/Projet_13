@@ -1,0 +1,59 @@
+{% extends 'sidebar.html' %}
+{% load static %}
+
+{% block title %} login {% endblock %}
+
+{% block big-title %} Connexion {% endblock %}
+
+
+{% block content %}
+<div class="login-page">
+  <div class="login-box">
+    <div class="login-logo">
+      <a href="../../index2.html"><b>Admin</b>LTE</a>
+    </div>
+    <!-- /.login-logo -->
+    <div class="card">
+      <div class="card-body login-card-body">
+        {% if incomplete_login %}
+          <p class="login-box-msg" style="color:#FF0000">Vos identifiants sont introuvables</p>
+        {% else %}
+          <p class="login-box-msg">Connectez-vous</p>
+        {% endif %}
+  
+        <form action="{% url 'login' %}" method="post">
+          {% csrf_token %}
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="User name" name="username">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-user"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="password" class="form-control" placeholder="Password" name="password">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
+            <!-- /.col -->
+            <div>
+              <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+            </div>
+            <!-- /.col -->
+          </div>
+        </form>
+  
+        <p class="mb-1 text-center">
+          <a href="forgot-password.html">J'ai perdu mon mot de passe</a>
+        </p>
+      </div>
+      <!-- /.login-card-body -->
+    </div>
+  </div>
+</div>
+  <!-- /.login-box -->
+{% endblock %}
