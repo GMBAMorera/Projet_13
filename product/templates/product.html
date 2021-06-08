@@ -1,9 +1,9 @@
 {% extends 'sidebar.html' %}
 {% load static %}
 
-{% block title %} customer {% endblock %}
+{% block title %} product {% endblock %}
 
-{% block big-title %} Client {% endblock %}
+{% block big-title %} Produit {% endblock %}
 
 
 {% block content %}
@@ -15,7 +15,7 @@
                 <!-- Default box -->
                 <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">{{visit_card.company}}</h3>
+                    <h3 class="card-title">Produit</h3>
                     <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                         <i class="fas fa-minus"></i>
@@ -25,29 +25,29 @@
                 <div class="card-body box-profile">
                     <div class="text-center">
                     <img class="profile-user-img img-fluid img-circle"
-                         src="{{visit_card.photo}}"
+                         src="{{product.photo}}"
                          alt="User profile picture">
                     </div>
 
-                    <h3 class="profile-username text-center">{{visit_card.first_name}} {{visit_card.surname}}</h3>
+                    <h3 class="profile-username text-center">{{product.name}}</h3>
 
-                    <p class="text-muted text-center">{{visit_card.job}}</p>
+                    <p class="text-muted text-center">{{product.description}}</p>
 
                     <ul class="list-group list-group-unbordered mb-3">
                         <li class="list-group-item">
-                        email:   <b>{{visit_card.email}}</b>
+                        prix off-the-shelf:   <b>{{product.off_the_shelf_price}}</b>
                         </li>
                         <li class="list-group-item">
-                        adresse:   <b>{{visit_card.adress}}</b>
+                        coût de production:   <b>{{product.production_cost}}</b>
                         </li>
                         <li class="list-group-item">
-                        {{web_adress.site_name}}:   <b>{{web_adress.web_adress}}</b>
+                        En stock:   <b>{{product.stock}} {{product.stock_unit}}</b>
                         </li>
                     </ul>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                    <a href='{% url "update_customers" vc_id=visit_card.id %}''>Modifier les données du client</a>
+                    <a href='{% url "update_products" id=product.id %}''>Modifier les données du client</a>
                 </div>
                 <!-- /.card-footer-->
                 </div>

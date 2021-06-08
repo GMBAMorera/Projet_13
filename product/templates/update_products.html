@@ -1,0 +1,97 @@
+{% extends 'sidebar.html' %}
+{% load static %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block big-title %} {{big_title}} {% endblock %}
+
+
+
+{% block content %}
+  <div class="register-page">
+    <div class="register-box">
+        <div class="card">
+        <div class="card-body register-card-body">
+                <p class="login-box-msg">Fiche Produit:</p>
+
+            <form action="{% url 'update_products' id=id%}" method="post">
+                {% csrf_token %}
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Nom" name="name" value="{{product.name}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Prix off-the-shelf" name="off_the_shelf_price" value="{{product.off_the_shelf_price}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Coût de production" name="production_cost" value="{{product.production_cost}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-briefcase"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Description" name="description" value="{{product.description}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-building"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Unités en Stock" name="stock" value="{{product.stock}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-image"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Unité de mesure" name="stock_unit" value="{{product.stock_unit}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-envelope"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="photo" name="photo" value="{{product.photo}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-envelope"></span>
+                </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <!-- /.col -->
+                <div>
+                <button type="submit" class="btn btn-primary btn-block">Enregistrer</button>
+                </div>
+                <!-- /.col -->
+            </div>
+            </form>
+        </div>
+        <!-- /.form-box -->
+        </div><!-- /.card -->
+    </div>
+    <!-- /.register-box -->
+
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+  </div>
+{% endblock %}

@@ -101,13 +101,13 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="pages/UI/general.html" class="nav-link">
+                  <a href="{% url 'all_products' %}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Annuaire produit</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/UI/icons.html" class="nav-link">
+                  <a href="{% url 'update_products' id=0 %}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Ajouter un nouveau produit</p>
                   </a>
