@@ -1,0 +1,142 @@
+{% extends 'sidebar.html' %}
+{% load static %}
+
+{% block title %} login {% endblock %}
+
+{% block big-title %} Connexion {% endblock %}
+
+
+{% block content %}
+  <div class="register-page">
+    <div class="register-box">
+        <div class="card">
+        <div class="card-body register-card-body">
+            {% if wrong_typed_pw %}
+                <p class="login-box-msg" style="color:#FF0000">les deux mots de passe ne sont pas identiques.</p>
+            {% else %}
+                <p class="login-box-msg">Bienvenue sur OCManager! Veuillez compléter votre profil:</p>
+            {% endif %}
+
+            <form action="{% url 'update_account' %}" method="post">
+                {% csrf_token %}
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Prénom" name="first_name" value="{{request.user.visit_card.first_name}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Nom" name="surname" value="{{request.user.visit_card.surname}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Photo" name="photo" value="{{request.user.visit_card.photo}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="email" class="form-control" placeholder="Email" name="email" value="{{request.user.email}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-envelope"></span>
+                </div>
+                </div>
+            </div>
+            <p>Renseignez votre adresse:</p>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Rue" name="street" value="{{request.user.visit_card.adress.street}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Numero" name="number" value="{{request.user.visit_card.adress.number}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Ville" name="city" value="{{request.user.visit_card.adress.city}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Département" name="state" value="{{request.user.visit_card.adress.state}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Pays" name="country" value="{{request.user.visit_card.adress.country}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Code Postal" name="postal_code" value="{{request.user.visit_card.adress.postal_code}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                </div>
+                </div>
+            </div>
+            <p>Renseignez votre mot de passe uniquement si vous voulez le changer:</p>
+            <div class="input-group mb-3">
+                <input type="password" class="form-control" placeholder="Password" name="password">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-lock"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="password" class="form-control" placeholder="Retype password" name="password2">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-lock"></span>
+                </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- /.col -->
+                <div>
+                <button type="submit" class="btn btn-primary btn-block">Enregistrer</button>
+                </div>
+                <!-- /.col -->
+            </div>
+            </form>
+        </div>
+        <!-- /.form-box -->
+        </div><!-- /.card -->
+    </div>
+    <!-- /.register-box -->
+
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+  </div>
+{% endblock %}
+    

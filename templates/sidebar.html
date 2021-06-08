@@ -40,14 +40,14 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-      {% if request.user.is_auth %}
+      {% if request.user.is_authenticated %}
         <!-- Sidebar user panel (optional) -->
         <div class="row user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="{% static 'dist/img/user2-160x160.jpg' %}" class="img-circle elevation-2" alt="User Image">
+            <img src="{{request.user.visit_card.photo}}" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">Alexander Pierce</a>
+            <a href="{% url 'account' %}" class="d-block">{{request.user.username}}</a>
           </div>
         </div>
 
@@ -78,13 +78,13 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="pages/charts/chartjs.html" class="nav-link">
+                  <a href="{% url 'all_customers' %}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Annuaire client</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/charts/flot.html" class="nav-link">
+                  <a href="{% url 'update_customers' vc_id=0 %}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Ajouter un client</p>
                   </a>
@@ -146,7 +146,7 @@
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
-                  {% if request.user.visit_card.status == "admin" %}
+                  {% if request.user.visit_card.status == "Ad" %}
                     <li class="nav-item">
                       <a href="{% url 'register' %}" class="nav-link">
                         <i class="far fa-circle nav-icon"></i>
@@ -155,7 +155,7 @@
                     </li>
                   {% endif %}
                   <li class="nav-item">
-                    <a href="pages/tables/data.html" class="nav-link">
+                    <a href="{% url 'all_employees' %}" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Tous les employés</p>
                     </a>
@@ -163,7 +163,7 @@
                 </ul>
               </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="{% url 'logout' %}" class="nav-link">
                 <i class="nav-icon fas fa-sign-out-alt"></i>
                 <p>
                   Déconnexion

@@ -15,7 +15,7 @@
                 <!-- Default box -->
                 <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">{{visit_card.company}}</h3>
+                    <h3 class="card-title">{{request.user.username}}</h3>
                     <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                         <i class="fas fa-minus"></i>
@@ -25,29 +25,26 @@
                 <div class="card-body box-profile">
                     <div class="text-center">
                     <img class="profile-user-img img-fluid img-circle"
-                         src="{{visit_card.photo}}"
+                         src="{{request.user.visit_card.photo}}"
                          alt="User profile picture">
                     </div>
 
-                    <h3 class="profile-username text-center">{{visit_card.first_name}} {{visit_card.surname}}</h3>
+                    <h3 class="profile-username text-center">{{request.user.visit_card.first_name}} {{request.user.visit_card.surname}}</h3>
 
-                    <p class="text-muted text-center">{{visit_card.job}}</p>
+                    <p class="text-muted text-center">{{request.user.visit_card.job}}</p>
 
                     <ul class="list-group list-group-unbordered mb-3">
                         <li class="list-group-item">
-                        email:   <b>{{visit_card.email}}</b>
+                        email:   <b>{{request.user.visit_card.email}}</b>
                         </li>
                         <li class="list-group-item">
-                        adresse:   <b>{{visit_card.adress}}</b>
-                        </li>
-                        <li class="list-group-item">
-                        {{web_adress.site_name}}:   <b>{{web_adress.web_adress}}</b>
+                        adresse:   <b>{{request.user.visit_card.adress}}</b>
                         </li>
                     </ul>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                    <a href='{% url "update_customers" vc_id=visit_card.id %}''>Modifier les données du client</a>
+                    <a href='{% url "update_account" %}''>Modifier les données de votre profil</a>
                 </div>
                 <!-- /.card-footer-->
                 </div>

@@ -1,0 +1,147 @@
+{% extends 'sidebar.html' %}
+{% load static %}
+
+{% block title %} {{title}} {% endblock %}
+
+{% block big-title %} {{big_title}} {% endblock %}
+
+
+
+{% block content %}
+  <div class="register-page">
+    <div class="register-box">
+        <div class="card">
+        <div class="card-body register-card-body">
+                <p class="login-box-msg">Fiche client:</p>
+
+            <form action="{% url 'update_customers' vc_id=vc_id%}" method="post">
+                {% csrf_token %}
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Prénom" name="first_name" value="{{visit_card.first_name}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Nom" name="surname" value="{{visit_card.surname}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Emploi" name="job" value="{{visit_card.job}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-briefcase"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Entreprise" name="company" value="{{visit_card.company}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-building"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Photo" name="photo" value="{{visit_card.photo}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-image"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="email" class="form-control" placeholder="Email" name="email" value="{{visit_card.email}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-envelope"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="site" name="site_name" value="{{visit_card.web_adress.site_name}}">: 
+                <input type="text" class="form-control" placeholder="url" name="web_adress" value="{{visit_card.web_adress.web_adress}}">
+            </div>
+            <div class="input-group mb-3">
+                <select name="status" class="form-control">
+                <option value="Cu">Client</option>
+                <option value="Co">Entreprise</option>
+                </select>
+            </div>
+            <p>Adresse client:</p>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Rue" name="street" value="{{visit_card.adress.street}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Numero" name="number" value="{{visit_card.adress.number}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Ville" name="city" value="{{visit_card.adress.city}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Département" name="state" value="{{visit_card.adress.state}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Pays" name="country" value="{{visit_card.adress.country}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Code Postal" name="postal_code" value="{{visit_card.adress.postal_code}}">
+                <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                </div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- /.col -->
+                <div>
+                <button type="submit" class="btn btn-primary btn-block">Enregistrer</button>
+                </div>
+                <!-- /.col -->
+            </div>
+            </form>
+        </div>
+        <!-- /.form-box -->
+        </div><!-- /.card -->
+    </div>
+    <!-- /.register-box -->
+
+    <!-- jQuery -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+  </div>
+{% endblock %}

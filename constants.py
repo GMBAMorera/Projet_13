@@ -15,3 +15,5 @@ ORDER_STATUS = [
     ('li', 'livraison'),
     ('ar', 'archivée')
 ]
+
+HOME_COMPANY = 'homeco'

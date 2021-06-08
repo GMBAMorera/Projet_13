@@ -20,7 +20,7 @@
         {% else %}
           <p class="login-box-msg">Connectez-vous</p>
         {% endif %}
-  
+
         <form action="{% url 'login' %}" method="post">
           {% csrf_token %}
           <div class="input-group mb-3">
@@ -46,10 +46,7 @@
             <!-- /.col -->
           </div>
         </form>
-  
-        <p class="mb-1 text-center">
-          <a href="forgot-password.html">J'ai perdu mon mot de passe</a>
-        </p>
+
       </div>
       <!-- /.login-card-body -->
     </div>
