@@ -7,5 +7,6 @@ urlpatterns = [
     path('account', views.account, name='account'),
     path('logout', views.logout_page, name='logout'),
     path('update_account', views.update_account, name='update_account'),
-    path('all_employees', views.all_employees, name='all_employees')
+    path('all_employees', views.all_employees, name='all_employees'),
+    path('delete_employee/<int:id>', views.delete_employee, name='delete_employee')
 ]

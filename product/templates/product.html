@@ -31,7 +31,7 @@
 
                     <h3 class="profile-username text-center">{{product.name}}</h3>
 
-                    <p class="text-muted text-center">{{product.description}}</p>
+                    <p class="text-muted text-center" id="description">{{product.description}}</p>
 
                     <ul class="list-group list-group-unbordered mb-3">
                         <li class="list-group-item">
@@ -47,7 +47,10 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                    <a href='{% url "update_products" id=product.id %}''>Modifier les données du client</a>
+                    <a href='{% url "update_products" id=product.id %}''>Modifier les données du produit</a>
+                    <div class="btn-group btn-group-sm">
+                      <a href="{% url 'delete_product' id=product.id %}" class="btn btn-danger text-right"><i class="fas fa-trash"></i></a>
+                    </div>
                 </div>
                 <!-- /.card-footer-->
                 </div>

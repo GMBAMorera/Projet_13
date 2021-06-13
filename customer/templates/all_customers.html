@@ -20,7 +20,7 @@
                   <div class="row">
                     <div class="col-7">
                     <h2 class="lead"><b>{{customer.first_name}} {{customer.surname}}</b></h2>
-                    <p class="text-muted text-sm"><b>Job: </b> {{customer.job}} </p>
+                    <p class="text-muted text-sm" id="job"><b>Job: </b> {{customer.job}} </p>
                     <ul class="ml-4 mb-0 fa-ul text-muted">
                         <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: {{customer.adress}}</li>
                         <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Mail: {{customer.email}}</li>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="card-footer">
                   <div class="text-right">
-                    <a href="{% url 'customer' vc_id=customer.id %}" class="btn btn-sm btn-primary">
+                    <a href="{% url 'customer' id=customer.id %}" class="btn btn-sm btn-primary">
                     <i class="fas fa-user"></i> View Profile
                     </a>
                   </div>

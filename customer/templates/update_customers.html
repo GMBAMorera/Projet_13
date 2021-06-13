@@ -14,7 +14,7 @@
         <div class="card-body register-card-body">
                 <p class="login-box-msg">Fiche client:</p>
 
-            <form action="{% url 'update_customers' vc_id=vc_id%}" method="post">
+            <form action="{% url 'update_customers' id=id%}" method="post">
                 {% csrf_token %}
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Prénom" name="first_name" value="{{visit_card.first_name}}">
@@ -65,8 +65,8 @@
                 </div>
             </div>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="site" name="site_name" value="{{visit_card.web_adress.site_name}}">: 
-                <input type="text" class="form-control" placeholder="url" name="web_adress" value="{{visit_card.web_adress.web_adress}}">
+                <input type="text" class="form-control" placeholder="site" name="site_name" value="{{web_adress.site_name}}">: 
+                <input type="text" class="form-control" placeholder="url" name="web_adress" value="{{web_adress.web_adress}}">
             </div>
             <div class="input-group mb-3">
                 <select name="status" class="form-control">
@@ -126,7 +126,7 @@
             <div class="row">
                 <!-- /.col -->
                 <div>
-                <button type="submit" class="btn btn-primary btn-block">Enregistrer</button>
+                <button type="submit" class="btn btn-primary btn-block" id="submit">Enregistrer</button>
                 </div>
                 <!-- /.col -->
             </div>
@@ -136,12 +136,5 @@
         </div><!-- /.card -->
     </div>
     <!-- /.register-box -->
-
-    <!-- jQuery -->
-    <script src="../../plugins/jquery/jquery.min.js"></script>
-    <!-- Bootstrap 4 -->
-    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="../../dist/js/adminlte.min.js"></script>
   </div>
 {% endblock %}

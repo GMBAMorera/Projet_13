@@ -15,7 +15,7 @@
                 <!-- Default box -->
                 <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">{{visit_card.company}}</h3>
+                    <h3 class="card-title" id="company">{{visit_card.company}}</h3>
                     <div class="card-tools">
                     <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                         <i class="fas fa-minus"></i>
@@ -47,7 +47,10 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                    <a href='{% url "update_customers" vc_id=visit_card.id %}''>Modifier les données du client</a>
+                    <a href='{% url "update_customers" id=visit_card.id %}''>Modifier les données du client</a>
+                    <div class="btn-group btn-group-sm">
+                      <a href="{% url 'delete_customer' id=visit_card.id %}" class="btn btn-danger text-right"><i class="fas fa-trash"></i></a>
+                    </div>
                 </div>
                 <!-- /.card-footer-->
                 </div>

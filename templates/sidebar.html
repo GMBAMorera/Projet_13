@@ -51,7 +51,7 @@
           </div>
         </div>
 
-        <!-- SidebarSearch Form -->
+        <!-- SidebarSearch Form
         <div class="form-inline">
           <div class="input-group" data-widget="sidebar-search">
             <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
@@ -61,7 +61,7 @@
               </button>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
@@ -70,7 +70,7 @@
                 with font-awesome or any other icon font library -->
             <li class="nav-item">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-chart-pie"></i>
+                <i class="nav-icon fas fa-user"></i>
                 <p>
                   Clients
                   <i class="right fas fa-angle-left"></i>
@@ -84,7 +84,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{% url 'update_customers' vc_id=0 %}" class="nav-link">
+                  <a href="{% url 'update_customers' id=0 %}" class="nav-link" id="add-customer">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Ajouter un client</p>
                   </a>
@@ -93,7 +93,7 @@
             </li>
             <li class="nav-item">
               <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-tree"></i>
+                <i class="nav-icon fas fa-box"></i>
                 <p>
                   Produit
                   <i class="fas fa-angle-left right"></i>
@@ -107,14 +107,14 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="{% url 'update_products' id=0 %}" class="nav-link">
+                  <a href="{% url 'update_products' id=0 %}" class="nav-link" id="add-product">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Ajouter un nouveau produit</p>
                   </a>
                 </li>
               </ul>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="nav-icon fas fa-edit"></i>
                 <p>
@@ -136,30 +136,30 @@
                   </a>
                 </li> 
               </ul>
-            </li>
+            </li> -->
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-table"></i>
+                  <i class="nav-icon fas fa-user-tie"></i>
                   <p>
                     Employés
                     <i class="fas fa-angle-left right"></i>
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="{% url 'all_employees' %}" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Annuaire employé</p>
+                    </a>
+                  </li>
                   {% if request.user.visit_card.status == "Ad" %}
                     <li class="nav-item">
-                      <a href="{% url 'register' %}" class="nav-link">
+                      <a href="{% url 'register' %}" class="nav-link" id="add-user">
                         <i class="far fa-circle nav-icon"></i>
                         <p>Ajouter un employé</p>
                       </a>
                     </li>
                   {% endif %}
-                  <li class="nav-item">
-                    <a href="{% url 'all_employees' %}" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Tous les employés</p>
-                    </a>
-                  </li>
                 </ul>
               </li>
             <li class="nav-item">
@@ -181,7 +181,7 @@
             <img src="{% static 'dist/img/logo.png' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
           </div>
           <div class="info">
-            <a href="{% url 'login' %}" class="d-block">LOGIN</a>
+            <a href="{% url 'login' %}" class="d-block" id="login">LOGIN</a>
           </div>
         </div>
       {% endif %}

@@ -1,12 +1,12 @@
 ### DATABASE CONSTANTS ###
 
-STATUS_CHOICE = [
-    ('Cu', 'customer'),
-    ('Co', 'company'),
-    ('Em', 'employee'),
-    ('Ad', 'admin')
-]
-
+STATUS_DICT = {
+    'Cu': 'customer',
+    'Co': 'company',
+    'Em': 'employee',
+    'Ad': 'admin'
+}
+STATUS_CHOICE = [ (status, STATUS_DICT[status]) for status in STATUS_DICT]
 
 ORDER_STATUS = [
     ('co', 'conception'),
