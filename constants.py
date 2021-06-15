@@ -7,6 +7,9 @@ STATUS_DICT = {
     'Ad': 'admin'
 }
 STATUS_CHOICE = [ (status, STATUS_DICT[status]) for status in STATUS_DICT]
+INV_STATUS_DICT = {
+    f'{STATUS_DICT[status]}': status for status in STATUS_DICT
+}
 
 ORDER_STATUS = [
     ('co', 'conception'),
