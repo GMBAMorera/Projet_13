@@ -47,9 +47,9 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                    <a href='{% url "update_customers" id=visit_card.id %}''>Modifier les données du client</a>
-                    <div class="btn-group btn-group-sm">
-                      <a href="{% url 'delete_customer' id=visit_card.id %}" class="btn btn-danger text-right"><i class="fas fa-trash"></i></a>
+                    <a href='{% url "update_customers" id=visit_card.id %}' class="btn btn-warning">Modifier les données du client</a>
+                    <div class="btn-group btn-group-sm float-right">
+                      <a href="{% url 'delete_customer' id=visit_card.id %}" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                     </div>
                 </div>
                 <!-- /.card-footer-->
